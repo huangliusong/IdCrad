@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>huangliusong</title>
+	<script type="text/javascript" src="./vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<div style="width: 700px;margin: auto;">
+			<div class="name">{{name}}</div>
+			<div class="sex">{{sex}}</div>
+			<div class="zu">{{zu}}</div>
+			<div class="year">{{year}}</div>
+			<div class="math">{{math}}</div>
+			<div class="day">{{day}}</div>
+			<div class="addr">{{addr}}</div>
+			<div class="detail">{{detail}}</div>
+			<div class="cardIdC">{{cardId}}</div>
+			<div>
+				<img style="width: 600px;height: 400px;" src="./cardpng.png">
+			</div>
+			<div>
+				<img type="file" class="head" src="./img/2.png" />
+			</div>
+			<div>
+				姓名：<input type="text" v-model="name" />
+				<br>
+				性别：<input type="text" v-model="sex" />
+				<br>
+				民族<input type="text" v-model="zu" />
+				<br>
+				年：<input type="text" v-model="year" />
+				<br>
+				月：<input type="text" v-model="math" />
+				<br>
+				日：<input type="text" v-model="day" />
+				<br>
+				地址<input type="text" v-model="addr" />
+				<br>
+				详细地址<input type="text" v-model="detail" />
+				<br>
+				身份证：<input type="text" v-model="cardId" />
+				<br>
+				头像：
+			</div>
+		</div>
+	</div>
+
+	<script type=" text/javascript">
+		var TodoItem = {
+			props: ['content'],
+			template: "<li>{{content}}</li>"
+		}
+
+		var app = new Vue({
+			el: '#app',
+			components: {
+				TodoItem: TodoItem
+			},
+			data: {
+				list: [],
+				name: '黄喵喵',
+				sex: '男',
+				zu: '汉',
+				year: '1994',
+				math: '10',
+				day: '30',
+				addr: '深圳市公安局经济侦查支队福田区',
+				detail: '侨香路3010号',
+				cardId: '110101199003076878'
+			},
+			methods: {
+				addClick: function () {
+					var date = new Date();
+					this.list.push(this.todoValue + " " + date);
+				}
+			}
+		})
+	</script>
+
+	<style>
+		.name {
+			position: absolute;
+			left: 530px;
+			top: 99px;
+			font-size: 16px;
+
+		}
+
+		.sex {
+			position: absolute;
+			left: 530px;
+			top: 140px;
+			font-size: 16px;
+		}
+
+		.zu {
+			position: absolute;
+			left: 630px;
+			top: 140px;
+			font-size: 16px;
+
+		}
+
+		.year {
+			position: absolute;
+			left: 520px;
+			top: 178px;
+			font-size: 16px;
+
+		}
+
+		.math {
+			position: absolute;
+			left: 600px;
+			top: 178px;
+			font-size: 16px;
+
+		}
+
+		.day {
+			position: absolute;
+			left: 650px;
+			top: 178px;
+			font-size: 16px;
+
+		}
+
+		.addr {
+			position: absolute;
+			left: 530px;
+			top: 218px;
+			font-size: 16px;
+		}
+
+		.detail {
+			position: absolute;
+			left: 530px;
+			top: 238px;
+			font-size: 16px;
+		}
+
+		.cardIdC {
+			position: absolute;
+			left: 600px;
+			top: 306px;
+			font-size: 20px;
+
+		}
+
+		.head {
+			position: absolute;
+			left: 780px;
+			top: 100px;
+			font-size: 20px;
+			width: 150px;
+			height: 170px;
+		}
+	</style>
+</body>
+
+</html>
